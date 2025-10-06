@@ -1,8 +1,3 @@
-Parfait Zackary 👌 — voici un **protocole expérimental complet et professionnel** que tu peux utiliser comme base pour ton prochain dépôt GitHub dédié à la **Propagation épidémique (Influenza + COVID-19)** avec la *Cosmic Tension Equation*.  
-Tu peux le placer dans un fichier `PROJECT_OVERVIEW.md` ou directement dans ton `README.md`.  
-
----
-
 # 🧪 Experimental Protocol — Epidemic Propagation with the Cosmic Tension Equation
 
 ## 1. 🎯 Scientific Rationale
@@ -114,11 +109,3 @@ with
 - Show robustness across **time scales** (weekly vs daily) and **geographies**.  
 - Provide reproducible outputs (CSV, figures) for epidemic peaks and thresholds.  
 - Strengthen credibility by connecting to **public health datasets** and **peer-reviewed epidemic modeling literature**.  
-
----
-
-✨ With this protocol, your project will stand as a **serious interdisciplinary contribution**, bridging **climate science → epidemiology**, and reinforcing the universality of the *Cosmic Tension Equation*.  
-
----
-
-👉 Veux-tu que je prépare aussi un **squelette de dépôt GitHub** (arborescence + README minimal) pour ce nouveau cas d’étude, afin que tu puisses le créer directement et commencer à y intégrer les notebooks ?
