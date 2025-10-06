@@ -1,0 +1,80 @@
+
+# 📑 Epidemic Propagation Case Study — Plan
+
+## 1. 🎯 Scientific Rationale
+- Epidemics are **complex dynamical systems**: they combine a deterministic trend (growth/decline of cases) with stochastic variability (super-spreader events, local outbreaks).  
+- Traditional models:  
+  - **Compartmental models (SIR, SEIR)** → deterministic, structured.  
+  - **Agent-based models** → detailed but computationally heavy.  
+- Your **Quadratic OU framework** offers a **lightweight, interpretable alternative**:  
+  - Drift = epidemic wave shape (quadratic decline after peak).  
+  - Noise = random fluctuations in case counts.  
+  - Threshold = hospital capacity or epidemic resurgence.  
+
+---
+
+## 2. 📊 Datasets (Public & Credible)
+
+### Seasonal Influenza
+- **WHO FluNet**: [https://www.who.int/tools/flunet](https://www.who.int/tools/flunet)  
+  - Weekly influenza cases by country, since 1995.  
+- **CDC FluView (US)**: [https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html](https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html)  
+  - Weekly influenza-like illness (ILI) data.  
+
+### COVID-19
+- **Johns Hopkins University CSSE COVID-19 Dataset**: [https://github.com/CSSEGISandData/COVID-19](https://github.com/CSSEGISandData/COVID-19)  
+  - Daily confirmed cases and deaths, global coverage.  
+- **Our World in Data (OWID)**: [https://ourworldindata.org/coronavirus](https://ourworldindata.org/coronavirus)  
+  - Cases, deaths, vaccinations, testing.  
+
+---
+
+## 3. 🔬 Adaptation of the Equation
+
+Equation (Quadratic OU):
+
+\[
+d\phi_t = -\gamma \, (\phi_t - \mu(t)) \, dt + \sqrt{2D}\, dW_t
+\]
+
+- \(\phi_t\) = normalized epidemic intensity (cases / population, or hospitalizations).  
+- \(\mu(t)\) = quadratic drift (captures epidemic wave shape).  
+- \(\gamma\) = reversion speed (how fast cases return to baseline).  
+- \(D\) = stochastic variance (random shocks, local outbreaks).  
+- Threshold = hospital capacity (ICU beds, ILI > epidemic baseline).  
+
+---
+
+## 4. 🧪 Validation Filters
+
+### Filter 1 — Data ingestion & normalization
+- Normalize weekly cases by population or by baseline (e.g., 2010–2019 average for flu).  
+- Produce \(\phi^*(t)\) series.  
+
+### Filter 2 — Internal consistency
+- Compare deterministic drift vs stochastic ensemble.  
+- Check if OU captures both the epidemic curve and variability.  
+
+### Filter 3 — Advanced validation
+- **Benchmarks:** SEIR model, ARIMA, logistic growth.  
+- **Out-of-sample:** Train on first half of epidemic wave, test on second half.  
+- **Sensitivity:** γ and D grid search → distribution of epidemic peaks.  
+- **Robustness:** Compare across countries (e.g., US vs Spain vs Japan).  
+- **Reproducibility:** Export CSV of predicted epidemic peaks and thresholds.  
+
+---
+
+## 5. 📚 Scientific References
+
+- **Korzin & Leonenko (2025)** — *Lightweight Models for Influenza and COVID-19 Prediction* (MDPI Mathematics) [link](https://www.mdpi.com/2227-7390/13/9/1385).  
+- **Andreu-Vilarroig et al. (2025)** — *Mathematical Modeling of Influenza Dynamics: Integrating Seasonality and Waning Immunity* (Bulletin of Mathematical Biology) [link](https://link.springer.com/article/10.1007/s11538-025-01454-w).  
+- **WHO FluNet** — Global influenza surveillance.  
+- **Johns Hopkins CSSE COVID-19 Dataset** — Global COVID-19 data.  
+
+---
+
+## 6. ✅ Expected Outcomes
+- Show that the **Cosmic Tension Equation** can reproduce epidemic waves with fewer assumptions than SEIR.  
+- Demonstrate robustness across **different diseases (flu vs COVID-19)** and **different geographies**.  
+- Provide reproducible outputs (CSV, figures) for epidemic peaks and hospital thresholds.  
+- Strengthen credibility by connecting to **public health datasets** and **peer-reviewed epidemic modeling literature**.  
