@@ -167,3 +167,4 @@ These results emphasize three major strengths of the model:
 
 This project is an invitation to **open critique** and **collaboration**: the code, data, and interpretations are public, reproducible, and ready to be enriched.  
 
+MIT License
